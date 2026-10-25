@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+out/
+output/*
+!output/
+!output/sandtube_indonesia_cpu/
+!output/sandtube_indonesia_cpu/**
+data/
+.ipynb_checkpoints/
+.DS_Store

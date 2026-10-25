@@ -82,11 +82,21 @@ def generate(tokenizer, model, messages):
 
 
 def get_reply(tokenizer, model, history, question):
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
+    messages = (
+        [{"role": "system", "content": SYSTEM_PROMPT}]
+        + history
+        + [{"role": "user", "content": question}]
+    )
     answer = generate(tokenizer, model, messages)
     if looks_like_echo(answer, question):
         stricter_system = SYSTEM_PROMPT + " Instruksi penting: keluaran wajib berupa jawaban, bukan pengulangan atau parafrasa pertanyaan."
-        answer = generate(tokenizer, model, [{"role": "system", "content": stricter_system}] + history)
+        answer = generate(
+            tokenizer,
+            model,
+            [{"role": "system", "content": stricter_system}]
+            + history
+            + [{"role": "user", "content": question}],
+        )
     if looks_like_echo(answer, question):
         return "Model masih mengulang pertanyaan dan belum memberi jawaban. Coba ubah prompt atau evaluasi adapter."
     return answer

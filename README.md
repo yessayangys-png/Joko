@@ -29,4 +29,14 @@ Training yang tercatat menggunakan LoRA pada CPU selama 80 langkah. Loss train 1
 ADAPTER_PATH=output/SandTube-Ai-LoRA python scripts/chat_sandtube.py
 ```
 
-Lima uji singkat tersimpan di `evaluation_sandtube_ai.json`. Hasilnya belum andal: model mengarang nama ibu pengguna, salah menangani aritmetika sederhana, dan salah memahami permintaan tentang dokumen yang belum diberikan. Adapter ini belum layak untuk penggunaan yang memerlukan jawaban faktual penting.
+Lima uji singkat tersimpan di `evaluation_sandtube_ai.json`. Benchmark yang lebih terstruktur tersedia di `evaluation_sandtube_ai_v2.json` dan dapat dijalankan dengan:
+
+```bash
+MODEL_NAME=izrai4/SandTube_Chat \
+ADAPTER_PATH=output/SandTube-Ai-LoRA \
+python scripts/evaluate_sandtube_ai.py
+```
+
+Hasil benchmark ditulis ke `evaluation_results.json`. Evaluator memberi skor per kategori untuk honesty, matematika, missing context, identitas, klarifikasi, dan pengetahuan dasar. Model belum boleh dipakai untuk keputusan faktual penting sebelum lulus gerbang evaluasi.
+
+Rancangan eksperimen dan hasil uji terbaru ada di `MODEL_TEST_AND_TRAINING_PLAN.md`.

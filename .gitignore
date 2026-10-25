@@ -4,6 +4,7 @@ __pycache__/
 .env
 .cache/
 hf_cache/
+.base_model/
 
 # Re-download Hugging Face content; redistribution licenses are not verified.
 data/huggingface/*raw*.jsonl
@@ -12,3 +13,6 @@ data/processed/*.jsonl
 
 # Keep only the final deployable adapter in the repository.
 output/*/checkpoint-*/
+output/*-smoke/
+evaluation_*results.json
+evaluation_v2_smoke.json

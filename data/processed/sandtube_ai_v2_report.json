@@ -1,0 +1,11 @@
+{
+  "total": 380,
+  "train": 340,
+  "valid": 40,
+  "categories": {
+    "math": 300,
+    "knowledge": 21,
+    "behavior": 14,
+    "curated": 45
+  }
+}

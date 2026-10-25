@@ -68,7 +68,10 @@ def main():
     def reject(reason: str):
         rejects[reason] = rejects.get(reason, 0) + 1
 
-    for line in RAW.read_text(encoding="utf-8").splitlines():
+    raw_lines = RAW.read_text(encoding="utf-8").splitlines() if RAW.exists() else []
+    if not RAW.exists():
+        print(f"Peringatan: {RAW} tidak ditemukan; memakai data kurasi repo saja.")
+    for line in raw_lines:
         try:
             row = json.loads(line)
         except Exception:
@@ -90,8 +93,9 @@ def main():
             reject("unsupported_specific_details"); continue
         if re.search(r"\b(?:Pengguna|Asisten|User|Assistant)\s*:", response, re.I) or re.search(r"\bvariasi\s+\d+", prompt, re.I):
             reject("role_leak_or_synthetic_variant"); continue
-        if re.search(r"\d", response):
-            reject("numeric_claims"); continue
+        # Numeric text is not inherently unsafe: keep deterministic math and
+        # numbered instructions. High-risk factual claims are already rejected
+        # by RISK on the prompt/response; do not erase useful safe examples here.
         lp, pp = language_id(prompt); lr, pr = language_id(response)
         if lp != "id" or pp < 0.62 or lr != "id" or pr < 0.62:
             reject("language_filter"); continue
@@ -129,7 +133,7 @@ def main():
             for r in rows:
                 f.write(json.dumps({"prompt": r["prompt"], "response": r["response"]}, ensure_ascii=False) + "\n")
     report = {
-        "raw_huggingface_rows_downloaded": sum(1 for _ in RAW.open(encoding="utf-8")),
+        "raw_huggingface_rows_downloaded": len(raw_lines),
         "hf_rows_passing_low_risk_language_filters": len(hf_rows),
         "hf_rows_used_train": len(hf_train),
         "hf_rows_held_out": len(hf_valid),

@@ -1,0 +1,20 @@
+{
+  "source_repo": "izrai4/SandTube_Chat",
+  "revision": "7f21cab7f469cf15eda90548c795514d31ce87ae",
+  "source_weight": "model.safetensors",
+  "source_weight_size_bytes": 2200119664,
+  "source_weight_sha256": "30b53e1e9697f742d67fed7ac94efabfc664786a596f7b0fd5764a32727d1b64",
+  "split_into": [
+    {
+      "path": "model.safetensors.part-00",
+      "size_bytes": 1100059832,
+      "sha256": "c5b5c15edbf5dd041547197c58cb13fbab7b1b0bf2aa722def0f0f0008a88800"
+    },
+    {
+      "path": "model.safetensors.part-01",
+      "size_bytes": 1100059832,
+      "sha256": "60e0d3e38fcc7ec16e4171b0969ec4f0520415d1511cc5ba9d8ee3b9e63bb546"
+    }
+  ],
+  "restore_command": "python restore_model.py"
+}

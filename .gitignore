@@ -1,12 +1,14 @@
-__pycache__/
-*.pyc
 .venv/
-venv/
-out/
-output/*
-!output/
-!output/sandtube_indonesia_cpu/
-!output/sandtube_indonesia_cpu/**
-data/
-.ipynb_checkpoints/
-.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.cache/
+hf_cache/
+
+# Re-download Hugging Face content; redistribution licenses are not verified.
+data/huggingface/*raw*.jsonl
+data/huggingface/*clean*.jsonl
+data/processed/*.jsonl
+
+# Keep only the final deployable adapter in the repository.
+output/*/checkpoint-*/

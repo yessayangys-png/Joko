@@ -1,0 +1,17 @@
+{
+  "datasets": {
+    "cahya/instructions_indonesian": {
+      "rows_seen": 2000,
+      "pairs_extracted": 2000
+    },
+    "LorthGyu/indonesian-instructions": {
+      "rows_seen": 410,
+      "pairs_extracted": 410
+    },
+    "INTISARI/intisari-indonesian-chat-v5": {
+      "rows_seen": 2000,
+      "pairs_extracted": 0
+    }
+  },
+  "normalized_rows": 2410
+}

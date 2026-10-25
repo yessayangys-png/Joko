@@ -1,0 +1,21 @@
+{
+  "train": {
+    "train_runtime": 1614.3888,
+    "train_samples_per_second": 0.198,
+    "train_steps_per_second": 0.05,
+    "total_flos": 377863586021376.0,
+    "train_loss": 1.7113854467868805,
+    "epoch": 1.5167464114832536
+  },
+  "eval": {
+    "eval_loss": 1.7667547464370728,
+    "eval_runtime": 30.8033,
+    "eval_samples_per_second": 0.422,
+    "eval_steps_per_second": 0.422,
+    "epoch": 1.5167464114832536
+  },
+  "method": "LoRA on CPU",
+  "adapter_bytes": 9034304,
+  "adapter_size_limit_bytes": 9034304,
+  "adapter_rank": 8
+}

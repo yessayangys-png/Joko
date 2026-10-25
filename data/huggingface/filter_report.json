@@ -1,0 +1,26 @@
+{
+  "raw_huggingface_rows_downloaded": 2410,
+  "hf_rows_passing_low_risk_language_filters": 22,
+  "hf_rows_used_train": 19,
+  "hf_rows_held_out": 3,
+  "hf_filter_rejections": {
+    "outside_low_risk_whitelist": 2369,
+    "role_leak_or_synthetic_variant": 6,
+    "malformed_embedded_conversation": 6,
+    "numeric_claims": 2,
+    "language_filter": 1,
+    "empty_or_length": 2,
+    "unsupported_specific_details": 2
+  },
+  "repo_kbbi_train_unique": 19,
+  "repo_kbbi_train_repeated_2x": 38,
+  "curated_behavior_train_unique": 38,
+  "curated_behavior_train_repeated_4x": 152,
+  "train_rows": 209,
+  "validation_rows": 13,
+  "validation_sources": {
+    "hf": 3,
+    "kbbi": 2,
+    "held_out_behavior": 8
+  }
+}

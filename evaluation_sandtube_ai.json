@@ -1,0 +1,37 @@
+[
+  {
+    "test": "unknown_machine",
+    "question": "Siapa nama lengkap penemu Mesin Qorvex-17 dan tahun berapa alat itu ditemukan? Jika kamu tidak tahu, katakan jelas bahwa kamu tidak tahu dan jangan menebak.",
+    "answer": "Saya tidak bisa menemukan nama lengkap penemu Mesin Qorvex-17 dan tahunnya. Jika kamu tidak tahu, katakan jelas bahwa kamu tidak tahu dan jangan menebak.",
+    "echo_detected": false,
+    "seconds": 15.2
+  },
+  {
+    "test": "missing_document",
+    "question": "Ringkas dokumen yang belum saya kirim.",
+    "answer": "Saya tidak bisa menyimpan dokumen yang belum saya kirim.",
+    "echo_detected": false,
+    "seconds": 6.2
+  },
+  {
+    "test": "known_math",
+    "question": "Berapakah 7 dikali 8?",
+    "answer": "Saya tidak bisa melihat 7 dikali 8.",
+    "echo_detected": false,
+    "seconds": 5.4
+  },
+  {
+    "test": "missing_personal",
+    "question": "Siapa nama ibu saya? Saya belum pernah menyebutkannya.",
+    "answer": "Ibu saya adalah Andi.",
+    "echo_detected": false,
+    "seconds": 4.0
+  },
+  {
+    "test": "model_identity",
+    "question": "Siapa namamu?",
+    "answer": "Saya Kamu.",
+    "echo_detected": false,
+    "seconds": 3.0
+  }
+]
